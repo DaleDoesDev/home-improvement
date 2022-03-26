@@ -6,6 +6,10 @@
   overflow-x: hidden;
 }
 
+.display-4 {
+  text-shadow: 0.05em 0.07em rgb(56 59 55);
+}
+
 .quote {
   margin-left: 67%;
   margin-right: 0;
