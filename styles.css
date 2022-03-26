@@ -508,7 +508,7 @@ hr {
   opacity: 0;
 }
 
-column div {
+.column {
   width: 100%;
   background-image: url("./images/roof-min.jpeg");
 
