@@ -27,6 +27,14 @@
     animation-duration: 0.3s;
   }
 
+  #regular-nav {
+    display: inline-block;
+  }
+
+  #mobile-nav {
+    display: none;
+  }
+
   @-webkit-keyframes shrink {
     0% {
       width: 18%;
@@ -79,8 +87,22 @@
     margin-left: 0;
   }
 
+  #regular-nav {
+    display: none;
+  }
+
+  #mobile-nav {
+    display: inline;
+    padding: 6% 0;
+    font-size: 5vw;
+    margin-left: 2vw;
+    color: white;
+    text-decoration: none;
+  }
+
   .navbar > .container-fluid {
     align-items: initial;
+    border: 4px solid rgba(256, 256, 256, 0.2);
   }
 
   .container-fluid {
@@ -93,19 +115,19 @@
 
   p.lead.quote {
     margin-left: 0;
-    margin-top: 2em;
-    font-size: 3.2vw;
+    margin-top: 5em;
+    font-size: 4vw;
   }
 
   p.lead,
   label.form-label {
-    font-size: 3.5vw;
+    font-size: 5vw;
     margin-top: 1em;
     width: 100%;
   }
 
   span.lead {
-    font-size: 3.8vw;
+    font-size: 4vw;
   }
 
   div.lead.banner-msg {
@@ -122,26 +144,26 @@
   }
 
   span.fadeIn.appear {
-    padding: 2% 0;
-    font-size: 3vw;
+    padding: 6% 0;
+    font-size: 0.6em;
     margin-left: 2vw;
     color: white;
     text-decoration: none;
   }
 
   span.fadeIn.appear span {
-    padding: 2% 0;
-    font-size: 0.9em;
+    padding: 0;
+    font-size: 1.2em;
     color: white;
     text-decoration: none;
   }
 
   .navbar-nav .nav-link {
-    padding: 0.5rem 4.5em;
+    padding: 2em 4.5em;
     -ms-flex-pack: distribute;
     justify-content: space-around;
     font-size: 1.7em;
-    border-right: 3px solid rgba(256, 256, 256, 0.2);
+    border-right: 4px solid rgba(256, 256, 256, 0.2);
   }
 
   div p,
@@ -150,7 +172,7 @@
   div .description span,
   .bannerThree span,
   .contactMsg {
-    font-size: 3vw;
+    font-size: 4vw;
     width: 80%;
     margin-top: 0.6em;
   }
@@ -169,11 +191,11 @@
   }
 
   span.card-title {
-    font-size: 3em;
+    font-size: 4em;
   }
 
   p.card-text {
-    font-size: 2em;
+    font-size: 3em;
     padding-bottom: 1.5em;
   }
 
@@ -241,7 +263,7 @@
 .navbar-toggler {
   background-color: #fba922;
   border-radius: 0;
-  width: 12%;
+  width: 18%;
 }
 
 .navbar-toggler:focus {
@@ -263,7 +285,7 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  border-top: 1px solid rgba(256, 256, 256, 0.2);
+  border-top: 4px solid rgba(256, 256, 256, 0.2);
 }
 
 nav span,
@@ -522,12 +544,6 @@ hr {
 #safari-parallax-disable {
   background-image: none;
   background-color: lightgray;
-}
-
-row column {
-  color: white;
-  font-size: 1.5vw;
-  width: 100%;
 }
 
 section {

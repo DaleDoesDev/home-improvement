@@ -143,7 +143,7 @@ $(document).ready(function () {
       navigator.userAgent.indexOf("Safari") != -1 &&
       navigator.userAgent.indexOf("Chrome") == -1;
     if (navigator.userAgent.match(/(iPod|iPhone|iPad)/) || is_safari) {
-      $("column div").attr("id", "safari-parallax-disable");
+      $(".column").attr("id", "safari-parallax-disable");
       $(".heroImage").addClass("fixBG");
     }
 
