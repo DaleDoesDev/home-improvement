@@ -1,4 +1,4 @@
-# Live home improvement website
+# Customer-facing home improvement website
 
 A responsive website layout for a business offering home improvement/handyman services. 
 
