@@ -26,16 +26,36 @@ const cleanInputData = (elementsArr) => {
   let textarea = $("textarea[name='message']");
   textarea.val(textarea.val().escape());
 
+  //clean the remaining inputs
   let selectedInput = "";
   elementsArr.forEach((el) => {
     selectedInput = $(`input[name='${el}']`);
     selectedInput.val(selectedInput.val().escape());
+    if (checkForURLS(selectedInput.val()) === true) return true;
   });
+};
+
+const checkForURLS = (input) => {
+  var expression =
+    /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+  var regex = new RegExp(expression);
+
+  if (input.match(regex)) return true;
+  else return false;
 };
 
 //ensure reCaptcha completed before form submit
 $(document).on("submit", ".form", function (e) {
+  //check for any URL spam
+    if (checkForURLS($('input[name="name"]').val()))
+      e.preventDefault();
+    if (checkForURLS($('input[name="address"]').val()))
+      e.preventDefault();
+    if (checkForURLS($('input[name="city"]').val()))
+      e.preventDefault();
+
   cleanInputData(["zipcode", "name", "email", "phoneNum", "address", "city"]);
+
   let elem = $(".errorMsg");
   if (grecaptcha.getResponse().length === 0) {
     //reCaptcha not verified
@@ -75,6 +95,7 @@ function checkScroll() {
     anchor_offset_five = $($(".card-text")[3]).offset().top;
 
   $(window).on("scroll", function () {
+
     //logo
     if ($(window).scrollTop() >= anchor_offset) {
       $(".navbar-brand").removeClass("expand");
@@ -143,7 +164,7 @@ $(document).ready(function () {
       navigator.userAgent.indexOf("Safari") != -1 &&
       navigator.userAgent.indexOf("Chrome") == -1;
     if (navigator.userAgent.match(/(iPod|iPhone|iPad)/) || is_safari) {
-      $(".column").attr("id", "safari-parallax-disable");
+      $("column div").attr("id", "safari-parallax-disable");
       $(".heroImage").addClass("fixBG");
     }
 
